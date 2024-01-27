@@ -628,11 +628,13 @@ const DoctorForm: React.FC = () => {
             />
 
             <h3>Schedule</h3>
-            {doctor.clinics[index]?.schedule.map((schedule, scheduleIndex) => (
+            {doctor.clinics[index]?.schedule.map(( schedule,scheduleIndex) => (
+              
               <div key={scheduleIndex}>
+                
                 <TextField
                   id={`clinic-${index}-day-${scheduleIndex}`}
-                  label="Day"
+                  label={`Day${schedule.day}`}
                   type="text"
                   name={`clinics.${index}.schedule.${index}.day`}
                   value={formData.clinics[index]?.schedule[index]?.day || ""}
@@ -660,6 +662,7 @@ const DoctorForm: React.FC = () => {
                 />
               </div>
             ))}
+
             <br></br>
 
             <Button
