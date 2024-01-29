@@ -10,17 +10,17 @@ import { Doctor } from "../Interfaces/doctor";
 const DoctorForm: React.FC = () => {
   // Use  Effect ----------------------------
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(
-            `Network response was not ok: ${response.statusText}`
-          );
-        }
-        return response.json();
-      })
-      .then(() => console.log("Checking data"))
-      .catch((error) => console.error("Error fetching data:", error));
+    // fetch("https://jsonplaceholder.typicode.com/posts")
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       throw new Error(
+    //         `Network response was not ok: ${response.statusText}`
+    //       );
+    //     }
+    //     return response.json();
+    //   })
+    //   .then(() => console.log("Checking data"))
+    //   .catch((error) => console.error("Error fetching data:", error));
   }, []);
   // Use Effect Ends -----------------------------------------
 
