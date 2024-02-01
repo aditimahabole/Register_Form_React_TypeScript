@@ -1,0 +1,369 @@
+<form
+autoComplete="off"
+noValidate
+onSubmit={formik.handleSubmit}
+style={containerStyle}
+>
+{/* <h1>Prescription Form</h1> */}
+<CardHeader title="Prescription Form" />
+{/* Doctor and Patient Information */}
+<TextField
+  id="doctorID"
+  label="Doctor ID"
+  variant="outlined"
+  fullWidth
+  name="doctorID"
+  value={formik.values.doctorID}
+  onChange={formik.handleChange}
+  error={formik.touched.doctorID && Boolean(formik.errors.doctorID)}
+  helperText={formik.touched.doctorID ? formik.errors.doctorID : ""}
+  style={textFieldStyle}
+/>
+<TextField
+  id="patientID"
+  label="Patient ID"
+  variant="outlined"
+  fullWidth
+  name="patientID"
+  value={formik.values.patientID}
+  onChange={formik.handleChange}
+  error={formik.touched.patientID && Boolean(formik.errors.patientID)}
+  helperText={formik.touched.patientID ? formik.errors.patientID : ""}
+  style={textFieldStyle}
+/>
+<TextField
+  id="clinicID"
+  label="Clinic ID"
+  variant="outlined"
+  fullWidth
+  name="clinicID"
+  value={formik.values.clinicID}
+  onChange={formik.handleChange}
+  error={formik.touched.clinicID && Boolean(formik.errors.clinicID)}
+  helperText={formik.touched.clinicID ? formik.errors.clinicID : ""}
+  style={textFieldStyle}
+/>
+
+<TextField
+  id="date"
+  label="Date"
+  type="date"
+  variant="outlined"
+  fullWidth
+  name="date"
+  value={formik.values.date}
+  onChange={formik.handleChange}
+  error={formik.touched.date && Boolean(formik.errors.date)}
+  helperText={formik.touched.date ? formik.errors.date : ""}
+  InputLabelProps={{
+    shrink: true,
+  }}
+  style={textFieldStyle}
+/>
+
+{/* <TextField
+id='medications'
+label='Medications'
+variant='outlined'
+fullWidth
+name='medications'
+value={formik.values.medications.map(medication => medication).join(', ')}
+onChange={formik.handleChange}
+error={formik.touched.medications && Boolean(formik.errors.medications)}
+helperText={formik.touched.medications ? formik.errors.medications : ''}
+style={textFieldStyle}
+/> */}
+
+<TextField
+  id="instructions"
+  label="Instructions"
+  variant="outlined"
+  fullWidth
+  name="instructions"
+  multiline
+  rows={4}
+  value={formik.values.instructions}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.instructions && Boolean(formik.errors.instructions)
+  }
+  helperText={
+    formik.touched.instructions ? formik.errors.instructions : ""
+  }
+  style={textFieldStyle}
+/>
+
+{/* Patient Information */}
+
+<CardHeader title="Patient Information" />
+<TextField
+  id="patient.firstName"
+  label="Patient First Name"
+  variant="outlined"
+  fullWidth
+  name="patient.firstName"
+  value={formik.values.patient.firstName}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.patient?.firstName &&
+    Boolean(formik.errors.patient?.firstName)
+  }
+  helperText={
+    formik.touched.patient?.firstName
+      ? formik.errors.patient?.firstName
+      : ""
+  }
+  style={textFieldStyle}
+/>
+<TextField
+  id="patient.lastName"
+  label="Patient Last Name"
+  variant="outlined"
+  fullWidth
+  name="patient.lastName"
+  value={formik.values.patient.lastName}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.patient?.lastName &&
+    Boolean(formik.errors.patient?.lastName)
+  }
+  helperText={
+    formik.touched.patient?.lastName
+      ? formik.errors.patient?.lastName
+      : ""
+  }
+  style={textFieldStyle}
+/>
+<TextField
+  id="patient.email"
+  label="Patient Email"
+  variant="outlined"
+  fullWidth
+  name="patient.email"
+  value={formik.values.patient.email}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.patient?.email &&
+    Boolean(formik.errors.patient?.email)
+  }
+  helperText={
+    formik.touched.patient?.email ? formik.errors.patient?.email : ""
+  }
+  style={textFieldStyle}
+/>
+<TextField
+  id="patient.contactNumber"
+  label="Patient Contact Number"
+  variant="outlined"
+  fullWidth
+  name="patient.contactNumber"
+  value={formik.values.patient.contactNumber}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.patient?.contactNumber &&
+    Boolean(formik.errors.patient?.contactNumber)
+  }
+  helperText={
+    formik.touched.patient?.contactNumber
+      ? formik.errors.patient?.contactNumber
+      : ""
+  }
+  style={textFieldStyle}
+/>
+
+<TextField
+  id="patient.dateOfBirth"
+  label="Patient Date of Birth"
+  type="date"
+  variant="outlined"
+  fullWidth
+  name="patient.dateOfBirth"
+  value={formik.values.patient.dateOfBirth}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.patient?.dateOfBirth &&
+    Boolean(formik.errors.patient?.dateOfBirth)
+  }
+  helperText={
+    formik.touched.patient?.dateOfBirth
+      ? formik.errors.patient?.dateOfBirth
+      : ""
+  }
+  InputLabelProps={{
+    shrink: true,
+  }}
+  style={textFieldStyle}
+/>
+
+<TextField
+  id="patient.gender"
+  label="Patient Gender"
+  variant="outlined"
+  fullWidth
+  name="patient.gender"
+  value={formik.values.patient.gender}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.patient?.gender &&
+    Boolean(formik.errors.patient?.gender)
+  }
+  helperText={
+    formik.touched.patient?.gender ? formik.errors.patient?.gender : ""
+  }
+  style={textFieldStyle}
+/>
+
+{/* Clinic Information */}
+<CardHeader title="Clinic Information" />
+<TextField
+  id="clinic.name"
+  label="Clinic Name"
+  variant="outlined"
+  fullWidth
+  name="clinic.name"
+  value={formik.values.clinic.name}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.clinic?.name && Boolean(formik.errors.clinic?.name)
+  }
+  helperText={
+    formik.touched.clinic?.name ? formik.errors.clinic?.name : ""
+  }
+  style={textFieldStyle}
+/>
+<TextField
+  id="clinic.address.Line1"
+  label="Address Line1"
+  variant="outlined"
+  fullWidth
+  name="clinic.address.Line1"
+  value={formik.values.clinic.address.Line1}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.clinic?.address?.Line1 &&
+    Boolean(formik.errors.clinic?.address?.Line1)
+  }
+  helperText={
+    formik.touched.clinic?.address?.Line1
+      ? formik.errors.clinic?.address?.Line1
+      : ""
+  }
+  style={textFieldStyle}
+/>
+<TextField
+  id="clinic.address.Line2"
+  label="Address Line2"
+  variant="outlined"
+  fullWidth
+  name="clinic.address.Line2"
+  value={formik.values.clinic.address.Line2}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.clinic?.address?.Line2 &&
+    Boolean(formik.errors.clinic?.address?.Line2)
+  }
+  helperText={
+    formik.touched.clinic?.address?.Line2
+      ? formik.errors.clinic?.address?.Line2
+      : ""
+  }
+  style={textFieldStyle}
+/>
+<TextField
+  id="clinic.address.Street"
+  label="Street"
+  variant="outlined"
+  fullWidth
+  name="clinic.address.Street"
+  value={formik.values.clinic.address.Street}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.clinic?.address?.Street &&
+    Boolean(formik.errors.clinic?.address?.Street)
+  }
+  helperText={
+    formik.touched.clinic?.address?.Street
+      ? formik.errors.clinic?.address?.Street
+      : ""
+  }
+  style={textFieldStyle}
+/>
+<TextField
+  id="clinic.address.City"
+  label="City"
+  variant="outlined"
+  fullWidth
+  name="clinic.address.City"
+  value={formik.values.clinic.address.City}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.clinic?.address?.City &&
+    Boolean(formik.errors.clinic?.address?.City)
+  }
+  helperText={
+    formik.touched.clinic?.address?.City
+      ? formik.errors.clinic?.address?.City
+      : ""
+  }
+  style={textFieldStyle}
+/>
+<TextField
+  id="clinic.address.Country"
+  label="Country"
+  variant="outlined"
+  fullWidth
+  name="clinic.address.Country"
+  value={formik.values.clinic.address.Country}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.clinic?.address?.Country &&
+    Boolean(formik.errors.clinic?.address?.Country)
+  }
+  helperText={
+    formik.touched.clinic?.address?.Country
+      ? formik.errors.clinic?.address?.Country
+      : ""
+  }
+  style={textFieldStyle}
+/>
+<TextField
+  id="clinic.contactNumber"
+  label="Clinic Contact Number"
+  variant="outlined"
+  fullWidth
+  name="clinic.contactNumber"
+  value={formik.values.clinic.contactNumber}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.clinic?.contactNumber &&
+    Boolean(formik.errors.clinic?.contactNumber)
+  }
+  helperText={
+    formik.touched.clinic?.contactNumber
+      ? formik.errors.clinic?.contactNumber
+      : ""
+  }
+  style={textFieldStyle}
+/>
+<TextField
+  id="clinic.email"
+  label="Clinic Email"
+  variant="outlined"
+  fullWidth
+  name="clinic.email"
+  value={formik.values.clinic.email}
+  onChange={formik.handleChange}
+  error={
+    formik.touched.clinic?.email && Boolean(formik.errors.clinic?.email)
+  }
+  helperText={
+    formik.touched.clinic?.email ? formik.errors.clinic?.email : ""
+  }
+  style={textFieldStyle}
+/>
+
+{/* Submit Button */}
+<Button type="submit" variant="contained" color="primary">
+  Submit
+</Button>
+</form>

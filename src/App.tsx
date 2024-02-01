@@ -1,16 +1,16 @@
+import "./App.css";
 
-
-import './App.css'
-
-import DoctorForm from './components/DoctorForm'
-import Appointment from './components/Appointment';
+import DoctorForm from "./components/DoctorForm";
+import Appointment from "./components/Appointment";
+import PrescriptionForm from "./components/PriscriptionForm";
 function App() {
   return (
     <>
-    <Appointment/>
-     <DoctorForm/>
+      <PrescriptionForm />
+      <Appointment />
+      <DoctorForm />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
